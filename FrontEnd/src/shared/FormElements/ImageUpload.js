@@ -6,7 +6,7 @@ import './ImageUpload.css';
 const ImageUpload = props => {
   const [file, setFile] = useState();
   const [previewUrl, setPreviewUrl] = useState();
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState(null);
 
   const filePickerRef = useRef();
 
@@ -59,7 +59,7 @@ const ImageUpload = props => {
           PICK IMAGE
         </Button>
       </div>
-      {!isValid && <p>{props.errorText}</p>}
+      {isValid === false && <p>{props.errorText}</p>}
     </div>
   );
 };
