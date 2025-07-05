@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/uploads/images' , express.static(path.join('uploads' , 'images')));
-app.use( express.static(path.join('public')));
+app.use( express.static(path.join(__dirname,'public')));
 
 app.get('/' , (req , res , next)=>
     {
