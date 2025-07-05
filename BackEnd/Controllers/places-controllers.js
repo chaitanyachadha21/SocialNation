@@ -77,11 +77,13 @@ const createPlace = async(req , res , next)=>
     return next(error);
   }
 
+  console.log("req.file:", req.file); 
+
   const createdPlace = new Place(
     {
     title,
     description,
-    image:req.file.path,
+    image: req.file.path.replace(/\\/g, '/'),
     location:coordinates,
     address,
     creator : req.userData.userId
