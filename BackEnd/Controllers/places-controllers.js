@@ -83,7 +83,7 @@ const createPlace = async(req , res , next)=>
     {
     title,
     description,
-    image: req.file.path.replace(/\\/g, '/'),
+    image:req.file ?  req.file.path.replace(/\\/g, '/') : req.body.image,
     location:coordinates,
     address,
     creator : req.userData.userId
