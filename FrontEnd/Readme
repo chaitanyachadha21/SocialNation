@@ -1,0 +1,7 @@
+Stateful VS Presentaional components
+
+Presentaional components are basically the components which doesnt have much logic in it they are just taking elemnts from parent ciomponents and rendering it likeuserlist , useritem.
+
+Stateful componets are the components whic have proper logic inside it that how the thing will work and all like user.js.
+
+

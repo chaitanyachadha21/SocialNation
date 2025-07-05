@@ -1,0 +1,33 @@
+# Ignore node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+
+# Ignore environment files (very important)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# If using nodemon config (like you are)
+nodemon.json
+
+# Optional: build output or compiled files
+dist/
+build/
+
+# Optional: coverage reports (e.g., from tests)
+coverage/
+
+# Process ID files (e.g., if using PM2 or similar)
+pids/
+*.pid
+*.seed
