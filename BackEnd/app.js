@@ -13,6 +13,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/uploads/images' , express.static(path.join('uploads' , 'images')));
+app.use( express.static(path.join('public')));
 
 app.get('/' , (req , res , next)=>
     {
@@ -25,9 +26,14 @@ app.use('/api/users', usersRoutes);
 
 app.use((req , res , next)=>
 {
-    const error = new HttpError("Something fishy you just typed doesnt exist",404);
-    throw error;
+    res.sendFile(path.resolve(__dirname , 'public' , 'index.html'));
 })
+
+// app.use((req , res , next)=>
+// {
+//     const error = new HttpError("Something fishy you just typed doesnt exist",404);
+//     throw error;
+// })
 
 app.use((error , req , res , next)=> // this comes into play if any middleware above it goes in error state
 {
